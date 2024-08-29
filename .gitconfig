@@ -1,0 +1,18 @@
+[user]
+	name = Ian Tang
+	email = ian.tang@protonmail.com
+	username = ian-tang
+[alias]
+	ac = commit -am
+	co = checkout
+	br = branch
+	unstage = reset HEAD --
+	st = status
+	last = log -1 HEAD
+	ci = commit
+	aliases = config --get-regexp ^alias\\.
+	undo = reset HEAD~1
+	squash = commit --amend --no-edit
+	graph = log --oneline --graph --all --decorate --abbrev-commit
+[init]
+	defaultBranch = main
