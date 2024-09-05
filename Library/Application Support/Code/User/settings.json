@@ -1,0 +1,178 @@
+{
+  // GENERAL SETTINGS
+  "settingsSync.ignoredSettings": [
+    "editor.fontFamily",
+    "terminal.integrated.fontFamily"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "explorer.autoReveal": false,
+  "editor.rulers": [80],
+  "editor.inlineSuggest.enabled": true,
+  "editor.cursorSurroundingLines": 16,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.wordWrapColumn": 120,
+  "editor.linkedEditing": true,
+  "editor.wrappingIndent": "indent",
+  "editor.stickyScroll.enabled": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "git.autofetch": true,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // APPEARANCE
+  // "editor.renderWhitespace": "all",
+  "workbench.editor.tabCloseButton": "left",
+  "editor.fontFamily": "MesloLGS NF",
+  "editor.lineHeight": 20,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Material Theme Palenight High Contrast",
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#9292927a",
+    "[Panda Syntax]": {
+      "list.errorForeground": "#FF4B82",
+      "list.warningForeground": "#FF75B5",
+      "gitDecoration.modifiedResourceForeground": "#FFCC95",
+      "gitDecoration.untrackedResourceForeground": "#46ccb8",
+      "gitDecoration.addedResourceForeground": "#6FC1FF"
+    },
+    "[One Monokai]": {
+      "terminalCursor.foreground": "#e06c75",
+      "editorBracketMatch.border": "#33d2e5"
+    },
+    "[Atom One Dark]": {
+      "terminalCursor.foreground": "#e06c75",
+      "editorCursor.foreground": "#e06c75",
+      "editorBracketMatch.border": "#33d2e5"
+    },
+    "[Material Theme Palenight High Contrast]": {
+      "editorBracketPairGuide.background1": "#E57373",
+      "editorBracketPairGuide.background2": "#E57373",
+      "editorBracketPairGuide.background3": "#E57373",
+      "editorBracketPairGuide.background4": "#E57373",
+      "editorBracketPairGuide.background5": "#E57373",
+      "editorBracketPairGuide.background6": "#E57373",
+      "editorBracketPairGuide.activeBackground1": "#E57373",
+      "editorBracketPairGuide.activeBackground2": "#E57373",
+      "editorBracketPairGuide.activeBackground3": "#E57373",
+      "editorBracketPairGuide.activeBackground4": "#E57373",
+      "editorBracketPairGuide.activeBackground5": "#E57373",
+      "editorBracketPairGuide.activeBackground6": "#E57373",
+      "editorBracketMatch.border": "#E57373"
+    },
+    "statusBar.noFolderBackground": "#202331",
+    "statusBar.debuggingBackground": "#202331",
+    "statusBar.foreground": "#A6ACCD",
+    "statusBar.debuggingForeground": "#A6ACCD",
+    "statusBar.background": "#202331"
+  },
+  "editor.fontLigatures": true,
+  "editor.tokenColorCustomizations": {
+    //   "[Monokai]": {
+    //       "variables": "#0ab685"
+    //   },
+    "[Panda Syntax]": {
+      "strings": "#46ccb8"
+    }
+    //   "[Sublime Material Theme - Dark]": {
+    //     "variables": "#54c9af",
+    //   }
+  },
+
+  // GENERAL FORMATTING RULES
+  "eslint.codeActionsOnSave.rules": null,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+
+  // LANGUAGE-SPECIFIC RULES
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jade]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svelte]": {
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120
+  },
+  "files.associations": {
+    "*.erb": "html"
+  },
+  "svelte.enable-ts-plugin": true,
+
+  // EXTENSIONS
+  "auto-close-tag.disableOnLanguage": ["typescript", "typescriptreact"],
+  "gitlens.codeLens.enabled": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": false,
+    "Log": true,
+    "javascript": true,
+    "typescript": true,
+    "sass": true,
+    "typescriptreact": true
+  },
+  "vim.smartRelativeLine": true,
+  "workbench.editor.tabActionLocation": "left",
+  "vim.statusBarColors.insert": "#89ddff",
+  "vim.statusBarColors.normal": "#c3e88d",
+  "vim.statusBarColors.visual": "#c792ea",
+  "vim.statusBarColors.visualblock": "#c792ea",
+  "vim.statusBarColors.visualline": "#c792ea",
+  "vim.statusBarColors.replace": "#f07178",
+  "vim.statusBarColors.commandlineinprogress": "#ffcb6b",
+  "vim.statusBarColors.searchinprogressmode": "#ffcb6b",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "workbench.sideBar.location": "right",
+  "go.toolsManagement.autoUpdate": true,
+  "editor.accessibilitySupport": "off"
+}

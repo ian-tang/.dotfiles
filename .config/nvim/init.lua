@@ -110,7 +110,8 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = "unnamedplus"
+--  keywords: register yank delete paste copy
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -484,7 +485,16 @@ require("lazy").setup({
 
 			-- Shortcut for searching your neovim configuration files
 			vim.keymap.set("n", "<leader>sn", function()
-				builtin.find_files({ cwd = vim.fn.stdpath("config") })
+				builtin.find_files({
+					cwd = function()
+						local dotfiles_path = "~/.dotfiles/.config/nvim"
+						if vim.fn.isdirectory(dotfiles_path) then
+							return dotfiles_path
+						end
+
+						return vim.fn.stdpath("config")
+					end,
+				})
 			end, { desc = "[S]earch [N]eovim files" })
 		end,
 	},
@@ -864,34 +874,6 @@ require("lazy").setup({
 			vim.cmd.hi("WinSeparator guifg=orange")
 		end,
 	},
-
-	-- Material Palenight theme
-	-- {
-	-- 	"JoosepAlviste/palenightfall.nvim",
-	-- 	lazy = false,
-	-- 	priority = 999,
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("palenightfall")
-	--
-	-- 		local c = require("palenightfall").colors
-	-- 		require("palenightfall").setup({
-	-- 			highlight_overrides = {
-	-- 				TermCursor = { fg = c.violet },
-	-- 				Selection = { bg = "#7880a4" },
-	-- 				CursorLine = { bg = c.statusline },
-	-- 				Search = { fg = c.background, bg = c.orange },
-	-- 				IncSearch = { fg = c.background, bg = c.orange },
-	-- 				NormalFloat = { fg = c.foreground, bg = c.background },
-	-- 				FloatBorder = { fg = c.foreground, bg = c.background },
-	-- 				TelescopeBorder = { fg = c.foreground },
-	-- 				TelescopePromptBorder = { fg = c.orange },
-	-- 				TelescopePromptNormal = { fg = c.background_darker },
-	-- 				CmpItemMenu = { bg = c.foreground },
-	-- 				CmpDocumentation = { bg = c.foreground },
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 
 	-- Highlight todo, notes, etc in comments
 	{
