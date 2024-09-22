@@ -159,3 +159,5 @@ function mktouch() {
     fi
 }
 
+
+export PATH=$PATH:/Users/ian/.spicetify
