@@ -133,6 +133,8 @@ else
     export EDITOR="nvim";
 fi
 
+export DISABLE_AUTO_TITLE=true
+
 # Export path to Obsidian notes vault
 export OBSIDIAN_NOTES_PATH="/Users/ian/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes/";
 
