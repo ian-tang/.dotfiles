@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # clean PATH 2024-07-31
-# CLEAN_PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/ian/.cargo/bin:/Applications/iTerm.app/Contents/Resources/utilities"
+CLEAN_PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/ian/.cargo/bin:/Applications/iTerm.app/Contents/Resources/utilities"
 
 if [ -n "$CLEAN_PATH" ]; then
     export PATH="$CLEAN_PATH"
@@ -118,6 +118,10 @@ fi
 
 if [[ ":$PATH:" != *"/opt/homebrew/bin:/opt/homebrew/sbin"* ]]; then
     export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+fi
+
+if [[ ":$PATH" != *"$PATH:/Users/ian/.spicetify"* ]]; then
+    export PATH="$PATH:/Users/ian/.spicetify"
 fi
 
 export NVM_DIR="$HOME/.nvm"
@@ -161,5 +165,4 @@ function mktouch() {
     fi
 }
 
-
-export PATH=$PATH:/Users/ian/.spicetify
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
