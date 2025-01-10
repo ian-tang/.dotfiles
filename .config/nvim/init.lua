@@ -235,6 +235,20 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	command = "set formatoptions-=c formatoptions-=r formatoptions-=o",
 })
 
+-- remember folds on exit
+vim.api.nvim_create_autocmd("BufWinLeave", {
+	pattern = "*.*",
+	group = vim.api.nvim_create_augroup("save-folds-on-exit", { clear = true }),
+	desc = "save view (folds) when closing vim",
+	command = "mkview",
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = "*.*",
+	group = vim.api.nvim_create_augroup("save-folds-on-exit", { clear = false }),
+	desc = "load view (folds) when opening vim",
+	command = "silent! loadview",
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
