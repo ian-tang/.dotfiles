@@ -148,6 +148,7 @@ export OBSIDIAN_NOTES_PATH="/Users/ian/Library/Mobile Documents/iCloud~md~obsidi
 
 alias python="python3"
 alias py="python3"
+alias npm="pnpm"
 alias nano="/opt/homebrew/bin/nano"
 alias disc="/Users/ian/Applications/discordo"
 alias spt="/Users/ian/.cargo/bin/spotify_player"
