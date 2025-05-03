@@ -180,7 +180,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Show/hide whitespace as listchars
 vim.keymap.set("n", "<leader>lc", function()
-	vim.opt.list = not vim.opt.list:get()
+	vim.opt.list = not (vim.opt.list:get())
 end, { desc = "Toggle [L]ist[c]hars" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -222,7 +222,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
-		vim.highlight.on_yank()
+		vim.hl.on_yank()
 	end,
 })
 
@@ -354,14 +354,14 @@ require("lazy").setup({
 			require("which-key").setup()
 
 			-- Document existing key chains
-			require("which-key").register({
-				["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-				["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-				["<leader>u"] = { name = "[U]ndotree", _ = "which_key_ignore" },
-				["<leader>l"] = { name = "[L]istchars", _ = "which_key_ignore" },
+			require("which-key").add({
+				{ "<leader>c", desc = "[c]ode" },
+				{ "<leader>d", desc = "[d]ocument" },
+				{ "<leader>r", desc = "[r]ename" },
+				{ "<leader>s", desc = "[s]earch" },
+				{ "<leader>w", desc = "[w]orkspace" },
+				{ "<leader>u", desc = "[u]ndotree" },
+				{ "<leader>l", desc = "[l]istchars" },
 			})
 		end,
 	},
@@ -640,7 +640,7 @@ require("lazy").setup({
 
 					-- Add border to the diagnostic popup window
 					vim.diagnostic.config({
-						float = { border = border },
+						float = true,
 					})
 					-- Add border to all LSP preview floats
 					local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
@@ -696,7 +696,7 @@ require("lazy").setup({
 				--    https://github.com/pmizio/typescript-tools.nvim
 				--
 				-- But for many setups, the LSP (`tsserver`) will work just fine
-				tsserver = {
+				ts_ls = {
 					settings = {
 						implicitProjectConfiguration = {
 							checkJs = true,
@@ -770,6 +770,7 @@ require("lazy").setup({
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_fallback = true,
+				stop_after_first = true,
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -778,11 +779,11 @@ require("lazy").setup({
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.
-				javascript = { { "prettierd", "prettier" } },
-				javascriptreact = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				typescriptreact = { { "prettierd", "prettier" } },
-				css = { { "prettierd", "prettier" } },
+				javascript = { "prettierd", "prettier" },
+				javascriptreact = { "prettierd", "prettier" },
+				typescript = { "prettierd", "prettier" },
+				typescriptreact = { "prettierd", "prettier" },
+				css = { "prettierd", "prettier" },
 				c = { "clang-format" },
 			},
 		},
