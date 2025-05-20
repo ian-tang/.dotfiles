@@ -172,15 +172,23 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
+-- Paste from the yank register unless otherwise specified
+vim.keymap.set("n", "pp", '"0p')
+vim.keymap.set("n", "P", '"0P')
+
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = -1 })
+end, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1 })
+end, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- Show/hide whitespace as listchars
 vim.keymap.set("n", "<leader>lc", function()
-	vim.opt.list = not (vim.opt.list:get())
+	vim.opt.list = not (vim.opt.listchars:get())
 end, { desc = "Toggle [L]ist[c]hars" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -749,6 +757,11 @@ require("lazy").setup({
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"ts_ls",
+					"gopls",
+				},
 				handlers = {
 					function(server_name)
 						local server = servers[server_name] or {}
