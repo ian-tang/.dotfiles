@@ -8,7 +8,7 @@
 	br = branch
 	unstage = reset HEAD --
 	st = status
-	last = log -1 HEAD
+	last = log --name-status HEAD^..HEAD
 	ci = commit
 	aliases = config --get-regexp ^alias\\.
 	undo = reset HEAD~1
