@@ -173,10 +173,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- Paste from the yank register unless otherwise specified
-vim.keymap.set("n", "pp", '"0p')
-vim.keymap.set("n", "P", '"0P')
-vim.keymap.set("v", "p", '"0p')
-vim.keymap.set("v", "P", '"0P')
+-- vim.keymap.set("n", "pp", '"0p')
+-- vim.keymap.set("n", "P", '"0P')
+-- vim.keymap.set("v", "p", '"0p')
+-- vim.keymap.set("v", "P", '"0P')
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", function()
