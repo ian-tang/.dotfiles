@@ -309,8 +309,21 @@ require("lazy").setup({
 		end,
 	},
 
+	-- Supermaven
+	{
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({})
+		end,
+	},
+
 	-- html tag completion
-	{ "alvan/vim-closetag" },
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup({})
+		end,
+	},
 
 	-- Vim motions training game, use with :VimBeGood
 	{ "ThePrimeagen/vim-be-good" },
@@ -896,6 +909,7 @@ require("lazy").setup({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
+					{ name = "supermaven" },
 				},
 			})
 		end,
