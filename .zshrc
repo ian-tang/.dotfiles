@@ -147,12 +147,12 @@ export OBSIDIAN_NOTES_PATH="/Users/ian/Library/Mobile Documents/iCloud~md~obsidi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# export PATH="/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH"
 
 alias python="python3"
 alias py="python3"
 alias npm="pnpm"
 alias nano="/opt/homebrew/bin/nano"
+alias bash="/opt/homebrew/bin/bash"
 alias disc="/Users/ian/Applications/discordo"
 alias spt="/Users/ian/.cargo/bin/spotify_player"
 # export LESS="-iRS#3NM~g"
