@@ -329,7 +329,7 @@ require("lazy").setup({
 	{ "ThePrimeagen/vim-be-good" },
 
 	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {} },
+	-- { "echasnovski/mini.comment", opts = {} },
 
 	-- smooth scrolling
 	{ "karb94/neoscroll.nvim", opts = {
@@ -471,6 +471,9 @@ require("lazy").setup({
 							width = { 0.8, max = 140 },
 							height = { 0.8, max = 36 },
 						},
+					},
+					preview = {
+						treesitter = false,
 					},
 				},
 				-- pickers = {}
@@ -984,14 +987,14 @@ require("lazy").setup({
 		config = function()
 			-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "bash", "c", "html", "lua", "markdown", "vim", "vimdoc" },
-				-- Autoinstall languages that are not installed
-				auto_install = true,
-				highlight = { enable = true },
-				indent = { enable = true },
-			})
+			-- ---@diagnostic disable-next-line: missing-fields
+			-- require("nvim-treesitter.configs").setup({
+			-- 	ensure_installed = { "bash", "c", "html", "lua", "markdown", "vim", "vimdoc" },
+			-- 	-- Autoinstall languages that are not installed
+			-- 	auto_install = true,
+			-- 	highlight = { enable = true },
+			-- 	indent = { enable = true },
+			-- })
 
 			-- There are additional nvim-treesitter modules that you can use to interact
 			-- with nvim-treesitter. You should go explore a few and see what interests you:
